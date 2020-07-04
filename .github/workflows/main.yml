@@ -1,0 +1,19 @@
+# name of workfow
+name: Test Workflow
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [ open,reopened ]
+jobs:
+  test:
+    name: test script
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Running Hello World script
+        run : echo Hello, World!
+          
+            
+     
+    
