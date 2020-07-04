@@ -1,7 +1,10 @@
 <template>
-  <div class="todo-item" v-bind:class="{'is-complete': todos.completed}">
-      <input type="checkbox" v-on:change="markComplete">
-      <p>{{ todos.title }}</p>
+  <div  class="todo-item" v-bind:class="{'is-complete': todos.completed}">
+    <p>
+         <input type="checkbox" v-on:change="markCompleted">
+        {{ todos.title }}
+        <button @click="$emit('del-todo',todos.id)" class="del">x</button>
+        </p>
   </div>
 </template>
 
@@ -10,14 +13,14 @@ export default {
     name: "TodoItems",
     props: [ "todos" ],
     methods: {
-        markComplete() {
-            this.todos.completed = !this.todos.completed
+        markCompleted() {
+            this.todos.completed = !this.todos.completed;
         }
     }
 }
 </script>
 
-<style scoped>
+<style>
 .todo-item{
     background: #f4f4f4;
     padding: 10px;
@@ -33,8 +36,9 @@ export default {
     background: #ff0000;
     color: #fff;
     border:none;
-    padding-inline: 5px 9px;
+    padding: 5px 10px;
     cursor: pointer;
     float:right;
+    border-radius: 40px;
 }
 </style>
