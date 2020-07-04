@@ -13,7 +13,10 @@
   }
 </script>
 
-<style>
+<!-- Adding "scoped" to limit the styling to this component only -->
+<style scoped>
 
 </style>
+
+
 
