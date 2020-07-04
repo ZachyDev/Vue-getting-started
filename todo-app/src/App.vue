@@ -1,24 +1,51 @@
 <template>
   <div id="app">
-    <HelloWorld msg = "CodeWithZachy"/>
+    <Todos v-bind:todos="todos"/>
   </div>
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld';
+// import Todos component
+ import Todos from './components/Todos';
   export default {
     name: 'App',
     components: {
-      HelloWorld
+      Todos     
+    },
+    // the data function
+    data() {
+      return {
+        // todo array of objects
+        todos: [
+          {
+            id: 1,
+            title: 'Todo One',
+            completed: false
+          },
+           {
+            id: 2,
+            title: 'Todo Two',
+            completed: true
+          },
+           {
+            id: 3,
+            title: 'Todo Three',
+            completed: false
+          }
+        ]
+      }
     }
   }
 </script>
 
 <style>
-#app{
-  color:#42b983;
-  position: relative;
-  margin-top:60px;
-
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
 }
 </style>
