@@ -28,7 +28,7 @@
             completed: true
           },
            {
-            id: 1,
+            id: 3,
             title: 'Todo Three',
             completed: false
           }
