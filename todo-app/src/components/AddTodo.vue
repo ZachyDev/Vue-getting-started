@@ -24,9 +24,5 @@ export default {
     }
     input[type="submit"] {
         flex:2;
-        background: #333;
-        color:#fff;
-        outline: none;
-        border-radius:5px;
     }
 </style>
